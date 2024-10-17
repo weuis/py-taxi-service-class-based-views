@@ -4,11 +4,10 @@
   <p><strong>License number: {{ driver.license_number }}</strong></p>
   <div class="ml-3">
     <h3> Cars: </h3>
-    {% for car in driver.cars.all %}
-      <hr>
-      <p class="text-muted">{{ car.model }} {{ manufacturer.name }}</p>
+    {% for driver in car.drivers.all %}
+        <p>{{ driver.name }}</p> 
     {% empty %}
-      <p>No cars!</p>
+        <p>No drivers available.</p>
     {% endfor %}
   </div>
 {% endblock %}
